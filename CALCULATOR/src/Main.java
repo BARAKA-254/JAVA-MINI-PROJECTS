@@ -29,6 +29,10 @@ public class Main {
             result = subtract(num1, num2);
             System.out.println("Result: " + result);
         }
+        else if(operator.equals("*")){
+            result = multiply(num1, num2);
+            System.out.println("Result: " + result);
+        }
         
 
         scanner.close();
@@ -48,5 +52,8 @@ public class Main {
         }
     }
 
+    public static double multiply(double num1, double num2){
+        return num1 * num2;
+    }
    
 }

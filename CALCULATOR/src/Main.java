@@ -13,58 +13,40 @@ public class Main {
         System.out.println("**WELCOME TO ARITHMETIC CALCULATOR**");
         System.out.println("************************************");
 
-        System.out.print("Choose one of the following operations: (+,-,*,): ");
+        System.out.print("Choose one of the following operations: (+,-,*,/): ");
         operator = scanner.nextLine();
         System.out.print("Enter the first number: ");
         num1 = scanner.nextDouble();
         System.out.print("Enter the second number: ");;
         num2 = scanner.nextDouble();
 
-
-        if(operator.equals("+")){
-            result = add(num1, num2);
-            System.out.println("Result: " + result);
-        }
-        else if(operator.equals("-")){
-            result = subtract(num1, num2);
-            System.out.println("Result: " + result);
-        }
-        else if(operator.equals("*")){
-            result = multiply(num1, num2);
-            System.out.println("Result: " + result);
-        }
-        else if(operator.equals("/")){
-            result = divide(num1, num2);
-            System.out.println("Result: " + result);
-        }
-        else{
-            System.out.println("INVALID OPERATION!!");
-        }
         
+        result = calculate(num1, num2, operator);
+        System.out.println("Result: " + result);
 
         scanner.close();
                 
     }
     
-    public static double add(double num1, double num2){
-        return num1 + num2;
-    }
+   public static double calculate(double num1, double num2, String operator){
 
-    public static double subtract(double num1, double num2){
-        if(num2 > num1){
-            return num2 - num1;
+        if(operator.equals("-")){
+            if(num1 > num2){
+                return num1 - num2;
+            }
+            else{
+                return num2 - num1;
+            }
         }
+
         else{
-            return num1 -num2;
+            return switch(operator){
+
+                case "+" -> num1 + num2;
+                case "*" -> num1 * num2;
+                case "/" -> num1 / num2;
+                default ->  0;
+            };
         }
     }
-
-    public static double multiply(double num1, double num2){
-        return num1 * num2;
-    }
-
-    public static double divide(double num1, double num2){
-        return num1 / num2;
-    }
-   
 }

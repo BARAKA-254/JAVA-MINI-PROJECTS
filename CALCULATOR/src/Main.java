@@ -25,6 +25,10 @@ public class Main {
             result = add(num1, num2);
             System.out.println("Result: " + result);
         }
+        else if(operator.equals("-")){
+            result = subtract(num1, num2);
+            System.out.println("Result: " + result);
+        }
         
 
         scanner.close();
@@ -33,6 +37,15 @@ public class Main {
     
     public static double add(double num1, double num2){
         return num1 + num2;
+    }
+
+    public static double subtract(double num1, double num2){
+        if(num2 > num1){
+            return num2 - num1;
+        }
+        else{
+            return num1 -num2;
+        }
     }
 
    

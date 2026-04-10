@@ -6,6 +6,7 @@ public class Main {
         String operator;
         double num1;
         double num2;
+        double result;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("************************************");
@@ -19,6 +20,20 @@ public class Main {
         System.out.print("Enter the second number: ");;
         num2 = scanner.nextDouble();
 
+
+        if(operator.equals("+")){
+            result = add(num1, num2);
+            System.out.println("Result: " + result);
+        }
+        
+
         scanner.close();
+                
     }
+    
+    public static double add(double num1, double num2){
+        return num1 + num2;
+    }
+
+   
 }

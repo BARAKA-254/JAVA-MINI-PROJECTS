@@ -33,6 +33,13 @@ public class Main {
             result = multiply(num1, num2);
             System.out.println("Result: " + result);
         }
+        else if(operator.equals("/")){
+            result = divide(num1, num2);
+            System.out.println("Result: " + result);
+        }
+        else{
+            System.out.println("INVALID OPERATION!!");
+        }
         
 
         scanner.close();
@@ -54,6 +61,10 @@ public class Main {
 
     public static double multiply(double num1, double num2){
         return num1 * num2;
+    }
+
+    public static double divide(double num1, double num2){
+        return num1 / num2;
     }
    
 }

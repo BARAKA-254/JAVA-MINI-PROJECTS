@@ -26,7 +26,7 @@ class Main {
                      balance -= withdraw(balance);
                      System.out.println("Balance: " + balance);
                   }
-        case 4 -> System.out.println("");
+        case 4 -> System.out.println("exitting!!");
         default -> System.out.println("Invalid option");
       }  
     }  

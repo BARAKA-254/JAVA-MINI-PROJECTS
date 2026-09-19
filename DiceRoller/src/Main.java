@@ -9,6 +9,9 @@ public class Main{
     
     System.out.print("How many rolls: ");
     int rolls = scanner.nextInt();
+    if (rolls < 0){
+      System.out.println("Invalid Input");
+    }
     int total = 0;
     for (int i = 0; i < rolls; i++){
       int result = random.nextInt(1,7);
@@ -22,6 +25,7 @@ public class Main{
         case 4 -> printDieFour();
         case 5 -> printDieFive();
         case 6 -> printDieSix();
+        default -> System.out.println("invalid choice");
       }
     }
     System.out.println("Total: " + total);

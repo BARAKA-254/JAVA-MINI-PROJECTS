@@ -20,9 +20,12 @@ class Main {
         case 1 -> checkBalance(balance);
         case 2 -> {
                      balance += deposit();
-                     System.out.println("New balance: " + balance);
+                     System.out.println("Balance: " + balance);
                   }
-        case 3 -> System.out.println("withdrawing");
+        case 3 -> {
+                     balance -= withdraw(balance);
+                     System.out.println("Balance: " + balance);
+                  }
         case 4 -> System.out.println("");
         default -> System.out.println("Invalid option");
       }  
@@ -46,5 +49,17 @@ class Main {
     System.out.println("You have deposited " + amount );
     return amount; 
   }
- 
+  
+  static double withdraw(double balance){
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Enter Amount to withraw: ");
+    double amount = scanner.nextDouble();
+
+    if (amount > balance){
+      System.out.println("Insufficient balance!!");
+      return 0.0;
+    }
+    return amount; 
+    
+  }
 }

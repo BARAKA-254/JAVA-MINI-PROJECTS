@@ -56,7 +56,10 @@ class Main {
       System.out.println("Insufficient balance!!");
       return 0.0;
     }
+    else if (amount < 0){
+      System.out.println("Amount can't be negative");
+      return 0;
+    }
     return amount; 
-
   }
 }
